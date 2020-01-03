@@ -23,7 +23,9 @@ int main() {
 
 	auto node = tree.find(6);
 	tree.preorder(print, node);
-
+	
+	tree.preorder([](int &data)->void { data++; });
+	tree.preorder(print);
 
 	return 0;
 }
