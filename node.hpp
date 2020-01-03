@@ -20,6 +20,7 @@ public:
 
 	// getters
 	T getData();
+	T &getDataRef();
 	Node<T> *getRight();
 	Node<T> *getLeft();
 
@@ -70,4 +71,9 @@ Node<T> *Node<T>::getRight() {
 template <class T>
 Node<T> *Node<T>::getLeft() {
 	return left_;
+}
+
+template <class T>
+T &Node<T>::getDataRef() {
+	return data_;
 }
