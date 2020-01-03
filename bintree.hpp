@@ -191,7 +191,7 @@ void BinTree<T>::preorder(Function func) {
 template <class T> template <class Function>
 void BinTree<T>::preorder(Function func, Node<T> *leaf) {
 	if (leaf != nullptr) {
-		func(leaf->getData());
+		func(leaf->getDataRef());
 		preorder(func, leaf->getLeft());
 		preorder(func, leaf->getRight());
 	}
@@ -206,7 +206,7 @@ template <class T> template <class Function>
 void BinTree<T>::inorder(Function func, Node<T> *leaf) {
 	if (leaf != nullptr) {
 		inorder(func, leaf->getLeft());
-		func(leaf->getData());
+		func(leaf->getDataRef());
 		inorder(func, leaf->getRight());
 	}
 }
@@ -221,6 +221,6 @@ void BinTree<T>::postorder(Function func, Node<T> *leaf) {
 	if (leaf != nullptr) {
 		postorder(func, leaf->getLeft());
 		postorder(func, leaf->getRight());
-		func(leaf->getData());
+		func(leaf->getDataRef());
 	}
 }
